@@ -1,0 +1,9 @@
+%h1 Welcome#index
+%p Find me in app/views/welcome/index.html.haml
+- if user_signed_in? 
+  %p= current_user.email 
+  %p= link_to :edit, edit_user_registration_path
+-else
+  %p= link_to(:login, new_user_session_path)
+  %p= link_to 'registration', new_user_registration_path
+%p= link_to 'ads', ads_path

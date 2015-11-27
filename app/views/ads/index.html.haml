@@ -1,0 +1,31 @@
+%h1 Listing ads
+
+%table
+  %tr
+    %th User
+    %th Title
+    %th Description
+    %th Photo
+    %th Facilities
+    %th Price
+    %th Address
+    %th
+    %th
+    %th
+
+  - @ads.each do |ad|
+    %tr
+      %td= ad.user
+      %td= ad.title
+      %td= ad.description
+      %td= ad.photo
+      %td= ad.facilities
+      %td= ad.price
+      %td= ad.address
+      %td= link_to 'Show', ad
+      %td= link_to 'Edit', edit_ad_path(ad)
+      %td= link_to 'Destroy', ad, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Ad', new_ad_path
